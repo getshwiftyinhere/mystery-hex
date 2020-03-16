@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>MYSTERYHEX | Mystery HEX Staking</title>
+    <meta name="keywords"
+    content="mystery hex, hex, hex games, fun, win, hex stake, hex crypto, games">
+    <meta name="description" content="MYSTERYHEX | HEX staking with an unknown day length for a surprise payday!">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="lib/fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="lib/animate/animate.css">
+    <link rel="stylesheet" href="css/style-v1.css">
+    <link rel="shortcut icon" href="favicon.ico">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-115508681-6"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-115508681-6');
+</script>
+
+  </head>
+  <body>
+  
+    <section id="nav-bar">
+      <nav class="navbar navbar-expand-lg navbar-light">
+        <a class="navbar-brand" href="#">
+          <div class="navTitle"><img src="img/hexLogo.png" alt="HEX logo"><i
+              style="width: 50px; text-shadow:0px 0px 5px black; position: relative; transform: translate(-54px,0px)"
+              class="fa fa-question-circle text-center"></i><span style="margin-left:-50px;">&nbsp;MYSTERY<b>HEX</b></span></div>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <i class="fa fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+        <span style="font-size:12px;"><a style="text-decoration: none; color:white" href="https://go.hex.win/transform/?r=0xB1A7Fe276cA916d8e7349Fa78ef805F64705331E" target="_blank"><b class="hexLink">CLICK FOR 10% MORE FREE HEX!</b></a></span>
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="https://hex.win/?r=0xB1A7Fe276cA916d8e7349Fa78ef805F64705331E" target="_blank">HEX Website</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="https://go.hex.win/transform/?r=0xB1A7Fe276cA916d8e7349Fa78ef805F64705331E"
+                target="_blank">HEX AA Lobby</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="https://hexviz.xyz" target="_blank">HEX Visualizer</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="https://hexotc.win" target="_blank">HEX Trade</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="https://t.me/hexcrypto" target="_blank">HEX Social</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </section>
+     <section class="banner">
+       <div id="successMsg"></div>
+       <div id="errorMsg"></div>
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-12 col-md-7 col-lg-5 text-center">
+              <div class="cont">
+                <div>
+                  <br/>
+                  <div class="wow tada" data-wow-iteration="infinite">
+                    <i class="questionMark fa fa-4x fa-question-circle"></i>
+                  </div>
+                  <b style="font-size:22px">Mystery Stake Length</b>
+                  <br/>
+                  <input id="BPDCheckBox" type="checkbox" name="BPDCheckBox" value="BPD"> Ensure stake end is after BPD?
+                </div>
+                <br/><br/>
+                <div>
+                  <b style="font-size:22px">Stake HEX Value</b>
+                  <br/>
+                    <input style="font-weight: 700" class="form-control text-right" type="number" id="hexStake" name="stakeHexValue"
+                    placeholder="HEX Amount" min="0" step="1000" onchange="CheckDecimal(this)"></input>
+                    <input id="randomValue" type="checkbox" onchange="RandomStakeValueWarn()"> Random stake value?
+                </div>
+                <img style='width:15px; margin-bottom:2.5px;' src='img/hexLogo.png'/> Balance: <span id="walletBalance"><i class="balanceQuestion fa fa-question-circle" onclick="ShowBalance()"></i><b style="font-size:14px" class="balanceQuestion" onclick="ShowBalance()">&nbsp;REVEAL</b></span>
+                <br/><br/>
+                <button class="takeBtn btn-primary" onclick="StakeHex()"><i class="fa fa-lock"></i>&nbsp;STAKE HEX</button>
+                <br/><br/>
+                <div class="info text-left">
+                  <i class="fa fa-info-circle"></i>&nbsp; Stakes from MYSTERY<b>HEX</b> are made direct to the HEX contract and belong to your connected wallet.
+                  <br/>
+                  <br/>
+                  <div class="text-center">
+                   <button class="revealBtn hexLink btn-primary" onclick="window.location.assign('https://go.hex.win/stake/?r=0xB1A7Fe276cA916d8e7349Fa78ef805F64705331E')"><i class="fa fa-eye"></i>&nbsp;REVEAL</button></a>
+                  </div>
+                  <br/>
+                  Connected wallet: <span id="userAddress">N/A<div style="width:100%; text-align: center;"><button class="takeBtn btn-primary" onclick="Connect()">Connect</button></div></span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <br/></br>
+        <div class="gameInfo container">
+          <div class="row justify-content-center">
+            <div style="padding-bottom:25px" class="col-12 col-lg-8">
+            <h4><i class="fa fa-bookmark"></i>&nbsp;About</h4>
+            <hr style="width:70%; margin-right: 30%"/>
+              <p><b>
+                <i style="width:20px; text-align: center;" class="fa fa-lock"></i>&nbsp;Stake your HEX with an unknown stake length for a surprise payday!<br/>
+                <i style="width:20px; text-align: center;" class="fa fa-question-circle"></i>&nbsp;MYSTERY<b>HEX</b> generates a random stake length up to a maximum of 3650 days (MAX LPB).<br/>
+                <i style="width:20px; text-align: center;" class="fa fa-funnel-dollar"></i>&nbsp;Optional random stake value up to a maximum of wallet balance.<br/>
+                <i style="width:20px; text-align: center;" class="fa fa-search-dollar"></i>&nbsp;Optional BPD stake length guarantee.
+              </b></p>
+            </div>
+          </div>
+        </div>
+     </section>
+    <section id="footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 col-md-4 footer-box">
+            <div id="social" class="text-left">
+              <p>Learn More About HEX</p>
+              <div class="social-icons">
+                <a href="https://hex.win/?r=0xB1A7Fe276cA916d8e7349Fa78ef805F64705331E" target="_blank"><i
+                    class="fa fa-link"></i></a>
+                <a href="https://go.hex.win/?r=0xB1A7Fe276cA916d8e7349Fa78ef805F64705331E" target="_blank"><i
+                    class="fa fa-wallet"></i></a>
+                <a href="https://hexviz.xyz" target="_blank"><i class="fa fa-eye"></i></a>
+                <a href="https://hexotc.win" target="_blank"><i class="fa fa-handshake"></i></a>
+                <a href="https://t.me/hexcrypto" target="_blank"><i class="fab fa-2x fa-telegram"></i></a>
+              </div>
+              <div class="text-left">
+                <p style="font-size:22px;" class="copyright">
+                  <a href="https://go.hex.win/transform/?r=0xB1A7Fe276cA916d8e7349Fa78ef805F64705331E" target="_blank">Buy HEX</a><br /><br />
+                  <a href="https://go.hex.win/stake/?r=0xB1A7Fe276cA916d8e7349Fa78ef805F64705331E" target="_blank">Stake HEX</a><br /><br />
+                  <a href="https://go.hex.win/claim/?r=0xB1A7Fe276cA916d8e7349Fa78ef805F64705331E" target="_blank">Claim HEX</a><br /><br />
+                  <a href="https://hex.win/?r=0xB1A7Fe276cA916d8e7349Fa78ef805F64705331E" target="_blank">Learn HEX</a><br /><br />
+                  <a href="https://hexviz.xyz" target="_blank">Watch HEX</a><br /><br />
+                  <a href="https://hexotc.win" target="_blank">Trade HEX</a><br /><br />
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-md-8 footer-box">
+            <br />
+            <img style="float:right; width:25px;" src="img/hexLogo.png" alt="">
+            <p class="text-right copyright">MYSTERY<b>HEX</b> is a community made project.<br/><br/>
+              Donations would be HEXcellent @ <span class="addressBreak">0xB1A7Fe276cA916d8e7349Fa78ef805F64705331E</span>
+            </p>
+            <div class="row text-right float-right">
+              <div class="col-12">
+                <input class="form-control text-right" type="number" id="ethDonate" name="donateEthValue"
+                  placeholder="ETH Amount" min="0" value="0.01"></input>
+              </div>
+              <div class="col-12 text-right">
+                <button class="takeBtn btn-primary" onclick="DonateEth()">Donate ETH</button><br /><br />
+              </div>
+              <div class="col-12">
+                <input class="form-control text-right" type="number" id="hexDonate" name="donateHexValue"
+                  placeholder="HEX Amount" min="0" value="5000"></input>
+              </div>
+              <div class="col-12 text-right">
+                <button class="takeBtn btn-primary" onclick="DonateHex()">Donate HEX</button><br /><br />
+              </div>
+            </div>
+          </div>
+        </div>
+        <br>
+      </div>
+    </section>
+    <script type="text/javascript" src="js/web3.min.js"></script>
+    <script type="text/javascript" src="js/web3Connect.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script>
+    new WOW().init();
+    </script>
+  </body>
+</html>
